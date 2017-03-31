@@ -1,0 +1,90 @@
+---
+layout: post
+title: The Riemann zeta function, the primon gas, and supersymmetry.
+date: 2016-05-30 16:20:33.000000000 +02:00
+type: post
+published: true
+status: publish
+categories:
+- Senza categoria
+tags: []
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '23330212431'
+author:
+  login: saselli
+  email: riccardo.antonelli@hotmail.it
+  display_name: rantonels
+  first_name: ''
+  last_name: ''
+---
+<p>The following is probably one of the weirdest unexpected bridges between abstract mathematics and theoretical physics I know of; the two weirdest features being that it's pretty simple to explain, and that the area of math it connects to is number theory. While the latter thing <em>can </em>occur occasionally, especially in the area of string theory, the former is basically close to impossible.</p>
+
+<p>A while back I was in a very ugly situation I needed to distract myself out of. I was struck by the fact that the Riemann zeta function looks a lot like a partition function from statistical mechanics. The Riemann zeta is:</p>
+
+<p>$$ \zeta(\beta) = \sum_{n=1}^\infty n^{-\beta}$$</p>
+
+<p>for \(Re(\beta) &gt; 1\) of course, and then one extends analytically. The partition function of a system with energy levels \( E_n\) is given by</p>
+<p>$$ Z(\beta) = \sum_n e^{-\beta E_n}$$</p>
+<p>where \( \beta = \frac{1}{k_B T}\). Note that if you have a system with energy levels \( E_n = \log n\), its partition function will be precisely the Riemann zeta. It's curious how they even use the same letter.</p>
+<h2>The bosonic primon gas</h2>
+<p>After googling I found out such a system has indeed been investigated. Basically, imagine a single particle, let's call it a primon, had the available energy levels</p>
+<p>$$ \log p_0, \log p_1, \ldots $$</p>
+<p>where the \( p_i\) are the prime numbers.</p>
+<p>Then imagine a system made by a bunch of these particles, a gas, and that they don't interact. Your system can have any number of primons, and each of these can be in any single particle state; moreover they are indistinguishable, and finally they are bosons so that you can place as many as you want in any single-particle state.</p>
+<p>The system's state could then be described by just specifying how many primons you want on each level, so the occupation numbers \( a_0,a_1,a_2,\ldots\). The energy of this state is then</p>
+<p>$$ E = a_0\log p_0 + a_1 \log p_1 + \ldots = \log \left( p_0^{a_0} p_1^{a_1} \ldots \right)$$</p>
+<p>Of course, for the energy of the state to be finite, the total number of particles $$ N = a_0 + a_1 + \ldots$$ must be finite and so the \( a_i\) must be zero from a certain \(i\) onwards.</p>
+<p>Note how a prime decomposition just popped up. The energy is \( \log n\) for some integer \( n = p_0^{a_0} p_1^{a_1} \ldots\) decomposed as powers of primes. By the prime factorization theorem, this decomposition exists for all integers and is unique. So the physics version of this theorem is that this system has the states \( |n\rangle\) for all the integers \( n\), with energy \(\log n\), occupation numbers given by the exponents in the prime decomposition, and most importantly no degeneracy: there is one and only one way to place primons on the energy levels to make a state of energy \( \log n\). Here's a super explicit example:</p>
+<p>The state \(|40 \rangle\) has energy \(\log 40\). Since \(40 = 2^3 \cdot 5^1\), this state has \(3\) primons with energy \(\log 2\) and \(1\) primon with energy \(\log 5\). The occupation numbers are \((3,0,1,0,0,0,\ldots)\).</p>
+<p>Cool. So the (grand canonical, actually) partition function of this thing is the sum over all possible states of the system of \(e^{-\beta E_n}\); but as we saw the states are indexed by all the positive integers, with energy \( \log n\), so actually</p>
+<p>$$ Z(\beta) = \sum_n e^{-\beta E_n} = \sum_{n=1}^\infty n^{-\beta} = \zeta(\beta)$$</p>
+<p>So yeah, the Riemann zeta is the partition function for the primon gas. But that's not all. This is still a gas of bosons, and normal statistical mechanics applies. In particular, we know the partition function must be</p>
+<p>$$ Z(\beta) = \prod_i \left(1 - e^{-\beta \epsilon_i }\right)^{-1} $$</p>
+<p>where \( \epsilon_i\) are the single-particle energies. Inserting our value for the energies we get:</p>
+<p>$$ Z(\beta) = \prod_{p} (1 - p^{-\beta} )^{-1} $$</p>
+<p>where the product is over prime \(p\)... we rediscovered Euler's celebrated product formula:</p>
+<p>$$ \zeta(\beta) = \prod_p (1- p^{-\beta})^{-1}$$</p>
+<p>but essentially only doing physics.</p>
+<p>Now we could stop here and this would be fun all by itself. We could also muse on whether this allows for an alternative approach to the Riemann hypothesis. However, there's two main obstacles:</p>
+<ul>
+<li>the Riemann hypothesis is about \( \beta = \frac{1}{2} + it \); while purely imaginary \( \beta\)s would be immensely interesting physically (because of Wick rotation, relating very roughly temperature in the statistical mechanics system with time in the quantum mechanics equivalent) I wouldn't really know what to do with the shift by one-half.</li>
+<li>the Riemann hypothesis is about zeroes. We have an easy interpretation of poles: for example the divergence at $$ \beta=1$$ in the partition function means the primon gas cannot actually get any hotter than that because it would require infinite energy - this an example of a Hagedorn temperature. But I wouldn't know what the zero of big zeta would mean physically.</li>
+</ul>
+<p>Sad. Maybe someone more informed can shed some light.</p>
+<p>But that's not all we can squeeze out of this. Let me introduce you to:</p>
+<h2>The fermionic primon gas</h2>
+<p>So now we want all primons to be fermions. The only thing we need to change is that no two particles can share the same state because of Pauli exclusion, so occupation numbers must be \( 0\) or \(1\). This means that we cannot get the state \(|n\rangle\) for all integers \( n\), but only if \( n\) has a decomposition into primes where all the exponents aren't bigger than one. Equivalently, it has to be a product of distinct primes, aka a square-free number.</p>
+<p>So the partition function is a sum over square-free numbers:</p>
+<p>$$ Z(\beta) = \sum_{n \text{S.F}} n^{-\beta} = \sum_{n=1}^\infty |\mu(n)| n^{-\beta} $$</p>
+<p>I was able to extend the sum to all integers by weighing with the absolute value of the Möbius function $$ \mu(n)$$ from number theory. This function is \( 0\) on non-square-free numbers, \( 1\) if your number is a product of an even number of primes, and \( -1\) otherwise. The Möbius function admits a crystalline interpretation as the operator giving the statistics of the state:</p>
+<p>$$ \mu(n) = (-1)^{N} $$</p>
+<p>that is, if there is an odd number of fermions, our state will be a fermion, even, it will be a boson. $$ \mu(n)$$ will tell us that. Anyways, the partition function can also be written using the known statmech result for a system of fermions:</p>
+<p>$$ Z(\beta) = \prod_i (1+e^{-\beta \epsilon_i}) = \prod_p (1 + p^{-\beta}) = \prod_p \frac{1- p^{-2\beta}}{1-p^{-\beta}} = \frac{\zeta(\beta)}{\zeta(2\beta)} $$</p>
+<p>So we found <em>another</em> famous number theory result</p>
+<p>$$ \sum_n |\mu(n)| n^{-\beta} = \frac{\zeta(\beta)}{\zeta(2\beta)} $$</p>
+<p>Now the final step for our trascendence beyond this material hyperplane is the</p>
+<h2>Supersymmetric primon gas</h2>
+<p><strong>Now</strong> we're talking. The two theories above describe respectively a bosonic and a fermionic particle species. A theory containing both would be supersymmetric and these particles would be superpartners. (Of course, we don't have to fiddle with the ultra-complex math of actual supersymmetry transformations in D-dimensional spacetime - because there's no spacetime here!). The supersymmetry would just be the symmetry sending bosons to fermions and viceversa.</p>
+<p>This is nothing to be scared of. I'm just taking the two systems, the bosonic and the fermionic gas, and putting them together. Simple composite system. Nothing is interacting so everything factorizes. We just consider the total energy = energy of bosons + energy of fermions.</p>
+<p>Now \( | n \rangle\) does not identify a single state. Calling the occupation numbers of bosons and fermions respectively \( a_i\) and \( b_i\), we still define the total \( n\) as</p>
+<p>$$ n = p_0^{a_0 + b_0} \cdot p_1^{a_1 + b_1} \cdot \ldots $$</p>
+<p>and the energy is indeed \( \log n\), but now giving \(n\) only fixes the total exponents \( a_i + b_i\) by prime decomposition; to fix the occupation number we also specify the total number built only with the \( b^i\):</p>
+<p>$$ d = p_0^{b_0} \cdot p_1^{b_1} \cdot \ldots $$</p>
+<p>so we can describe all states as \( |n,d\rangle\) where \(d\) is square-free. Note that \( d\) divides \(n\). So actually \(d\) must be a square-free divisor of n.</p>
+<p>Let's forget about the partition function (which is just the product of the previous two, since this is just a composite system of the previous two systems). Let's talk expectation values. If you have an operator \( O\), you can compute the average value of the operator at a given temperature through:</p>
+<p>$$ \langle O \rangle = \sum_{\text{states}} e^{-\beta E} O$$</p>
+<p>and note the partition function is just the expectation value of 1. So we want to compute the expectation value of the operator $$ (-1)^{N_F}$$ counting fermions, defined above. This is</p>
+<p>$$ \Delta = \langle (-1)^{N_F} \rangle = \sum_n \sum_{d|n} \mu(d) n^{-\beta}$$</p>
+<p>I've swapped the operator with its representation as the Möbius function, and I should sum over square-free divisors of \( n\), but actually I can just sum over all divisors since \( \mu\) projects out the square-free ones.</p>
+<p>Now the inner sum is</p>
+<p>$$ \sum_{d|n} \mu(d) \;= 1 \text{ if }n&gt;1,\; 0 \text{ if }n=1 $$</p>
+<p>Why? Well there's a math reason and a physics reason. Math reason, I'll let you check it out in the Wiki article for the Möbius function. Physics reason, is supersymmetry. At any given energy, the set of states is supersymmetric, and there are as many fermionic (-1) states as there are bosonic (+1). So in the sum they cancel out to 0. The only exception is the ground state \( |1,0\rangle\).</p>
+<p>So \( \Delta = 1\). But then, this is the expectation value computed in the supersymmetric theory; since this is a simple sum of the bosonic and fermionic theory, this should factorize:</p>
+<p>$$ \Delta = \langle (-1)^{N_F} \rangle_B \langle (-1)^{N_F} \rangle_F $$</p>
+<p>first one, the operator always takes the value 1, so the expectation value is the partition function in the bosonic case, good ol' \( \zeta(\beta)\). Second one, it's the sum \( \sum_{d=1}^\infty \mu(d) d^{-\beta}\). So here's the last number theory fact for today:</p>
+<p>$$ \frac{1}{\zeta(\beta)} = \sum_{d=1}^\infty \mu(d) d^{-\beta}$$</p>
+<p>It's not over yet: you can also prove the more substantial Möbius inversion formula, but I'm not going to talk about that. Read about it in this paper: <a href="http://projecteuclid.org/euclid.cmp/1104180135">http://projecteuclid.org/euclid.cmp/1104180135</a></p>
+<p>End of transmission.</p>
+<p>&nbsp;</p>

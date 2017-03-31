@@ -1,0 +1,49 @@
+---
+layout: post
+title: A geometric proof of Hawking radiation, through imaginary time
+date: 2016-09-07 15:23:52.000000000 +02:00
+type: post
+published: true
+status: publish
+categories:
+- Senza categoria
+tags: []
+meta:
+  _rest_api_published: '1'
+  _rest_api_client_id: "-1"
+  _publicize_job_id: '26582128758'
+author:
+  login: saselli
+  email: riccardo.antonelli@hotmail.it
+  display_name: rantonels
+  first_name: ''
+  last_name: ''
+---
+<p>Black holes are states at thermal equilibrium, at a positive temperature inversely proportional to the mass, and they therefore emit black body radiation at that temperature. Everybody knows that. But why? By far the most common explanation in divulgation is in terms of pair production of particles at the horizon, which is a shame because I personally find it very opaque. The most popular among physicists instead is the "standard" derivation based on diagonalizing the equations of motion for the fields in two different charts and the Bogoliubov transformations and blah blah blah. Technical. As reliable and as sexy as a brick.</p>
+
+<p>It would be cool if there was a more elegant argument. Perhaps simpler, depending on your definition of simpler. Well, there is. Here it is:</p>
+
+<p>Let's use natural units. $latex \hbar = c = k_B = 1$.</p>
+<p>(The inverse) <strong>temperature is periodicity in imaginary time</strong>. Consider an observable of a system which is a function of a duration of time, $latex A(t)$. For example, if I give it a kick at time $latex t'$, how big of a noise is it going to make at time $latex t'+t$? The answer to this question is an observable depending on the time interval $latex t$. Ok, then more often than not these $latex A(t)$ will be analytic functions and to some extent you will be able to extend them to function of <em>complex</em> t. Then the statement is:</p>
+<p>If all of these functions $latex A(t)$ are periodic of period $latex \beta$ in imaginary time, that is $latex A(t + i \beta) = A(t)$, then the system is actually in thermal equilibrium at temperature $latex T = 1/\beta$.</p>
+<p>This is a very important and fundamental relationship. I can't really introduce it simply, the most elementary introduction I've seen yet is <a href="http://physics.stackexchange.com/questions/27416/what-is-a-simple-intuitive-way-to-see-the-relation-between-imaginary-time-perio">this</a>.</p>
+<p>Now, assuming this is known, let's see the geometry part of this post. The Schwarzschild metric is:</p>
+<p>$$ ds^2 = - (1-\frac{r_S}{r}) dt^2 + (1-\frac{r_S}{r})^{-1} dr^2 + r^2 d\Omega^2$$</p>
+<p>but as we will see all that matters is what happens close to the horizon at $latex r = r_S$. So we change variables $latex r = r_S(1+\epsilon)$ and take $latex \epsilon$ very small so we study the near-horizon geometry. (It's not actually <em>necessary</em> to take this limit - it just simplifies the following calculations without compromising the result). So</p>
+<p>$$ ds^2 = - \epsilon dt^2 + \frac{r_S^2}\epsilon d\epsilon^2 + r_S^2 d\Omega^2$$</p>
+<p>Cool, now let's take a final change of variables to send this into a decent form, we try $$ \frac{\rho^2}{4 r_S^2} = \epsilon$$:</p>
+<p>$$ ds^2 = - \frac{\rho^2}{4r_S^2} dt^2 + d \rho^2 + r_S^2 d\Omega^2$$</p>
+<p>This is actually all well-known, it's just the <a href="https://en.wikipedia.org/wiki/Rindler_coordinates">Rindler metric</a>. Spacetime right outside a black hole is well approximated by uniformly accelerating spacetime, makes a lot of sense.</p>
+<p>☆ But now, here's the actual quantum magic. Let's <strong>extend the metric to complex t</strong>. In particular we care about the imaginary axis, so $latex t = i \tau$ with $latex \tau$ real. So</p>
+<p>$$ ds^2 = \frac{\rho^2}{4r_S^2} d \tau^2 + d\rho^2 + r_S d\Omega^2$$</p>
+<p>Now forget about the $latex \Omega$ part - that's not an issue. Look at the τ - ρ part. Looks familiar?</p>
+<p>It's just the metric for the flat Euclidean plane, in polar coordinates: $latex ds^2 = dr^2 + r^2 d\theta^2$. You just need to identify $latex \theta = \tau/(2 r_S) $. Actually, however, the identification is not perfect because of the periodicity of $latex \theta $, which is of course $latex 2\pi $. If the periodicity is anything else than that, this geometry will have an angular defect or a conical singularity. For example, if the period is $latex \pi $, then you can build this by taking a sheet of paper, marking a point along an edge, and gluing together the two pieces of the edge on the two sides of the marked point. You very clearly get a cone with a sharp tip. The tip has curvature, but we don't want curvature: curvature is proportional to stress-energy in general relativity, but black holes have no energy lying about at the horizon - they are empty.</p>
+<p>[caption id="attachment_630" align="aligncenter" width="311"]<img class=" size-full wp-image-630 aligncenter" title="" src="{{ site.baseurl }}/assets/mint_chocolate_chip_ice_cream_cone_908014.jpg" alt="mint_chocolate_chip_ice_cream_cone_908014" width="311" height="460" /> Did the particle pair explanation bring you ice cream? Yeah, didn't think so.[/caption]</p>
+<p>The tip must go away and so the period must be $$ 2\pi $. So the period of $latex \tau $ is $latex 4\pi r_S = 8\pi G M $. So <strong>black holes are states of temperature</strong> $latex T = 1/(8\pi G M) $$, as measured by observers whose time is $latex t $, therefore those at infinity.</p>
+<p>Simply <b>glorious</b>.</p>
+<p>It's very close to being elementary, because except for the relationship between temperature and imaginary time everything is pretty much changes of variables. It's such a cool idea that the thermodynamics of the quantum black hole metric is encoded somewhat in its geometrical structure. And it's also very general: we did not need to setup any specific quantum field theory (= a quantum particle theory) on the black hole metric, as you do in the other derivations. In fact, we know whatever theory actually describes quantum gravity, it cannot be a QFT. So this kind of argument is very powerful.</p>
+<p>On the other hand, this is a pretty informal argument. It's very creative, so to speak, but not particularly rigorous. There are a million points where you could nitpick. Therefore, this is only seen as a secondary reinforcement of the results of the more precise derivations. I won't comment further on all these million subtleties, because my intent here was only to introduce the argument in its deceiving beauty.</p>
+<h3>Bonus round</h3>
+<p>By the way, from the ☆ onwards this is also a proof of the Unruh effect - obvious because the latter and Hawking radiation are more or less the same thing. In the case of Unruh radiation the imaginary-time metric really is flat Euclidean space. In our case of a Schwarzschild black hole, this is only true in the near-horizon limit. If we take into account the whole exterior region, the imaginary-time metric is describable as and is in fact called "a cigar". The tip of the cigar is smooth (because we imposed it!) and of course when you zoom in becomes the flat plane. This doesn't really change the required periodicity of $latex \tau$, which runs as an angular coordinate around the cigar.</p>
+<h3>Refs</h3>
+<p>I believe the first time the imaginary-time periodicity argument for Hawking radiation was appreciated is <a href="http://journals.aps.org/prd/abstract/10.1103/PhysRevD.15.2738">this 1977 Hawking + Gibbons paper</a>. Also please take a look at the last sentence of the abstract - pretty interesting.</p>

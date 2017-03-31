@@ -1,0 +1,110 @@
+---
+layout: post
+title: Differential forms
+date: 
+type: post
+published: false
+status: draft
+categories:
+- Senza categoria
+tags: []
+meta: {}
+author:
+  login: saselli
+  email: riccardo.antonelli@hotmail.it
+  display_name: rantonels
+  first_name: ''
+  last_name: ''
+---
+<p>Differential forms are a wonderful tool that makes everything easy. However, they are often neglected or under-represented in courses. Why? I don't know.</p>
+<p>Here's a condensed primer on forms for the average physicist (or engineer. Or whatever). This is neither an introduction to the formal theory, nor is it a <em>visualization</em> or a tool to build an intuitive understanding. This is just the bare minimum for you to do basic calculations with forms and not look like a cretin every time people talk about Hodge stars or wedge products.</p>
+<p>Let's dive right in. No time to lose.</p>
+<p>We are in an d-dimensional space. This space does not need to be Euclidean space. In fact, it neither needs to be flat, nor does it need to be <em>space</em> (it could be a spacetime). Part of what I'll say will hold in the general case.</p>
+<p><span style="color:#993300;">Some things instead will depend upon the signature and metric of space. I will give these results for flat, Euclidean d-space, and will mark them in red. They will not hold in the same way in curved space or spacetime or curved spacetime.</span></p>
+<p>There are d coordinates on space which I will call $latex x^1, \ldots, x^d&amp;s=1$.</p>
+<h2>k-forms</h2>
+<p>On a d-dimensional space you can define k-forms with k from 0 to d.</p>
+<p>0-forms are normal numbers. For example, 2 or 4 are 0-forms.</p>
+<p>1-forms are the following objects: $latex dx^1, dx^2, \ldots, dx^d&amp;s=1$ and all their linear combinations. For example: $latex 4dx^3 - 2 dx^1&amp;s=1$ is a 1-form.</p>
+<p><span style="color:#993300;">In Euclidean space, 1-forms can be identified with vectors. Just identify the vector $latex \vec v = (v^1, v^2, \ldots , v^d)&amp;s=1$ with the 1-form $latex v^1 dx^1 + \ldots + v^d dx^d&amp;s=1$.</span></p>
+<p>Now we introduce the following objects: $latex dx^i \wedge dx^j&amp;s=1$. These are 2-forms. We also choose $latex dx^i \wedge dx^j = - dx^j \wedge dx^i&amp;s=1$, i.e. the wedge is antisymmetric. This also means that $latex dx^1 \wedge dx^1 = dx^2 \wedge dx^2 = \ldots = 0&amp;s=1$. So for example in 3D the independent 2-forms we can build are</p>
+<p>$latex dx^1 \wedge dx^2 , dx^2 \wedge dx^3, dx^3 \wedge dx^1&amp;s=1$</p>
+<p>2-forms are all linear combinations of these $latex d(d-1)/2&amp;s=1$ basis 2-forms (try to prove this number). For example, $latex 6dx^3 \wedge dx^1 + 5dx^2\wedge dx^1 &amp;s=1$ are 2-forms.</p>
+<p>3-forms are defined similarly. You start with the objects $latex dx^i \wedge dx^j \wedge dx^k&amp;s=1$, but you again implement the rule that swapping two wedged 1-forms gets a minus sign.</p>
+<p>And so on, and so on.</p>
+<p>Until you reach d-forms. There is only one independent d-form. This is because $latex dx^{i_1} \wedge \ldots \wedge dx^{i_d}&amp;s=1$ contains d basis 1-forms; none of these can be equal as by using the swapping rule we could make them adjacent and so the thing would vanish (as 1-form wedge itself is zero). So they're all different and using the swapping rule up to signs you can reduce your d-form to $latex dx^1 \wedge \ldots \wedge dx^d&amp;s=1$. <span style="color:#993300;">In Euclidean space (and also in Minkowski space) this is also the volume form, informally called $latex dV&amp;s=1$. </span>Then d-forms are just multiples of the volume form.</p>
+<p>How many independent k-forms exist? Well, you can always use the swap rule to put the k $latex dx^i&amp;s=1$s in order. Then, understood that order doesn't matter except for a sign, a basis k-form is just specified by which subset of the d $latex dx^i&amp;s=1$s you've included. Choosing k elements from a set of d elements can be done in</p>
+<p>$latex {d \choose k} = \frac{d!}{k!(d-k)!}&amp;s=1$</p>
+<p>different ways, so there are as many independent k-forms. You can obviously sum a k-form with another k-form (with the same k! At least for now), and you can obviously multiply them by a scalar number, so k-forms form a vector space which we call $latex \Lambda^k&amp;s=1$. So the dimension of $latex \Lambda^k$ is $latex d \choose k&amp;s=1$.</p>
+<p>As an example, here are the dimensions of the $latex \Lambda^k&amp;s=1$s for d = 3</p>
+<p>$latex 1, 3, 3, 1&amp;s=1$</p>
+<p>or for d = 6:</p>
+<p>$latex 1,6,15,20,15,6,1&amp;s=1$</p>
+<p>and before you start squirming in your chair, yes, those are rows of Pascal's triangle. Music of the spheres, yada yada yada. Let's move on.</p>
+<p>No wait, first, note the symmetry. There are as many indep. k-forms as (d-k)-forms. Not a coincidence and will be explained later.</p>
+<h3>wedge product</h3>
+<p>We only introduced the wedge between the $latex dx^i&amp;s=1$ symbols, but it can actually be defined as a genuine operation between any two forms.</p>
+<p>Imagine we have a p-form $latex \omega_p&amp;s=1$ and a q-form $latex \eta_q&amp;s=1$. The pedices are only here to remind us of the degree of the form, they don't mean anything and are omitted when it's obvious.</p>
+<p>We can define an operation $latex \omega_p \wedge \eta_q&amp;s=1$ that would give us a (p+q)-form. Don't worry: when p+q &gt; d, the result is zero.</p>
+<p>To do this, we just need these rules for the wedge symbol:</p>
+<ul>
+<li>it's linear: $latex (\alpha + \beta) \wedge (\gamma+\delta) = \alpha\wedge \gamma + \beta \wedge \gamma + \alpha\wedge \delta + \beta\wedge \delta$ and $latex (a \alpha) \wedge (b \beta) = ab (\alpha \wedge \beta)&amp;s=1$</li>
+<li>it's associative: $latex (\alpha\wedge \beta) \wedge \gamma = \alpha \wedge (\beta\wedge \gamma)&amp;s=1$</li>
+</ul>
+<p>Then when we need to find the wedge between two forms, we just expand them in terms of the $latex dx^i$ and grind our way through with the identities we know. Example:</p>
+<p>$latex ( 2 dx^2\wedge dx^3 + 5 dx^1 \wedge dx^3) \wedge (8 dx^2) &amp;s=1$</p>
+<p>$latex = 16 dx^2 \wedge dx^3 \wedge dx^2 + 40 dx^1 \wedge dx^3 \wedge dx^2&amp;s=1$</p>
+<p>$latex = -40 dx^1 \wedge dx^2 \wedge dx^3&amp;s=1$</p>
+<p>note in the end I used the swap property to put the $latex dx^i&amp;s=1$ in order; the first term disappeared because there were two $latex dx^2&amp;s=1$s and the second one got a minus from the swap.</p>
+<p>Here's the last couple of facts about the wedge.</p>
+<ul>
+<li>It's commutative between two even forms, again commutative between an even form and an odd form, and anticommutative between two odd forms. In short $latex \omega_p \wedge \eta_q = (-1)^{pq} \eta_q \wedge \omega_p&amp;s=1$. Note this implies that the wedge of any odd form with itself is zero.</li>
+<li>The wedge between a 0-form and any form is just the normal product by a scalar.</li>
+</ul>
+<h3>Hodge dual</h3>
+<p>While the spaces of k-forms and (d-k)-forms have the same dimension, there is no natural identification between them. <span style="color:#993300;">There is one if you also have a metric on your space though. Hodge duality is an operation that acts on a k-form $latex \omega$ to give a (d-k)-form $latex \ast \omega&amp;s=1$. I'll describe Hodge duality only in the case of Euclidean d-space.</span></p>
+<p><span style="color:#993300;">Of course, we want the Hodge dual to be linear. Therefore we only need to say how it acts on the basis k-forms. Let's do that through an example. Say we are in d=5 and we have a basis 2-form, for example</span></p>
+<p><span style="color:#993300;">$latex dx^1 \wedge dx^3&amp;s=1$</span></p>
+<p><span style="color:#993300;">We want to compute $latex \ast (dx^1 \wedge dx^3)&amp;s=1$</span></p>
+<p><span style="color:#993300;">if your $latex dx^i&amp;s=1$ are not ordered, make them so with the swap rule. Then, wedge them with all the <em>missing</em> $latex dx^i&amp;s=1$s (ordered) to make the volume form:</span></p>
+<p><span style="color:#993300;">$latex (dx^1 \wedge dx^3) \wedge (dx^2 \wedge dx^4 \wedge dx^5)&amp;s=1$</span></p>
+<p><span style="color:#993300;">then, this is essentially the volume form except for a sign at most. Reorder this thing using swaps until it's equal to the volume form and count the resulting sign. That's your sign for the Hodge dual. In our case, I need 1 swap, so (-).</span></p>
+<p><span style="color:#993300;">Then our Hodge dual is the wedge of the missing $latex dx^i&amp;s=1$s, ordered, with the sign we computed:</span></p>
+<p><span style="color:#993300;">$latex \ast(dx^1 \wedge dx^3) = - dx^2 \wedge dx^4 \wedge dx^5&amp;s=1$</span></p>
+<p><span style="color:#993300;">It looks complicated but it's actually really easy. Here's some examples in d=3:</span></p>
+<p><span style="color:#993300;">$latex \ast dx^1 = dx^2 \wedge dx^3&amp;s=1$</span></p>
+<p><span style="color:#993300;">$latex \ast (dx^2 \wedge dx^3) = dx^1&amp;s=1$</span></p>
+<p><span style="color:#993300;">$latex \ast (dx^3 + 4 dx^2) = dx^1 \wedge dx^2 - 4 dx^3 \wedge dx^1&amp;s=1$</span></p>
+<p><span style="color:#993300;">and so on. You'll get the hang of it eventually. Note that the 0-form 1 and the volume form are Hodge dual: $latex \ast 1 = dV&amp;s=1$, $latex \ast dV = 1&amp;s=1$.</span></p>
+<p><span style="color:#993300;">Two important properties of the Hodge star:</span></p>
+<ul>
+<li><span style="color:#993300;">it's non-degenerate, i.e. applied to a nonzero k-form gives a nonzero (d-k)-form. In fact it's an isomorphism between $latex \Lambda^k$ and $latex \Lambda^{d-k}&amp;s=1$.</span></li>
+<li><span style="color:#993300;">It's almost its own inverse. That is, applying $latex \ast$ twice to a k-form returns you back to the original form, except for a sign. The sign is as such: $latex \ast^2 = (-1)^{k(d-k)}&amp;s=1$. Note that this means that in <strong>either</strong> odd dimension, <strong>or</strong> even k, you have $latex \ast^2 = 1$ so that it is its own inverse. For example, in d=3 you won't have to worry about this sign.</span></li>
+</ul>
+<h2>differential forms</h2>
+<p>So what if we make a form-valued function of the coordinates. Like a function $latex \omega_p(x) : \mathbb{R^d} \rightarrow \Lambda^p$ giving us a p-form at any point in space.</p>
+<p>What if in addition we assume this function is smooth. How smooth exactly is not important right now, let's say smooth enough for us to take all the derivatives we need.</p>
+<p>What you get is a differential p-form. You can always write a differential form as a linear combination of the basis p-forms, but with coefficients that are themselves function of the coordinates. For example, the following is a differential 2-form:</p>
+<p>$latex x^3 dx^1 \wedge dx^2 + (9(x^1)^4 + \sin(x^3)) dx^3 \wedge dx^1$</p>
+<p>aaaaand that's mostly it. You can obviously apply all the operations we did before, sum, multiplication by a scalar, Hodge, all of them. Real easy.</p>
+<p>We call the vector space of differential p-forms $latex \Omega^p$. This is quite bigger than $latex \Lambda^p$, in fact it's infinite dimensional. Not a problem.</p>
+<h3>exterior derivative</h3>
+<p>The whole reason for introducing differential forms is this: we can introduce a magical differential operator. It's very important that this derivative does not depend on the metric or the signature (if you'll ever do GR, you'll realize what I'm talking about). This is the exterior derivative, and we denote it as $latex d$. It acts on any p-form to give you a (p+1)-form, so it's a map $latex d : \Omega^p \rightarrow \Omega^{p+1}$. Here's how it works:</p>
+<ul>
+<li>It's linear (don't let me write it again)</li>
+<li>It satisfies (almost) the Leibniz rule with the wedge: $latex d(\alpha_p \wedge \beta_q) = (d\alpha_p) \wedge \beta_q + (-1)^p (\alpha_p \wedge \beta_q)$. A good mnemonic for the sign is: think of $latex d$ as a 1-form, even if it isn't. To move it past $latex \alpha_p$ to get it near $latex \beta_q$ you have to swap with a p-form and so you get -1 if p is odd.</li>
+<li>Applied on a 0-form, it works like taking the differential. In fact, $latex d(x^i) = dx^i$ and our notation for the basis 1-forms was justified. They are just d applied to the coordinates. If you have a differential 0-form, that is a function $latex f(x^1,\ldots,x^d)$ then it works like this: $latex df = \frac{\partial f}{\partial x^1} dx^1 + \ldots + \frac{\partial f}{\partial x^d} dx^d$.</li>
+<li><strong>Most important:</strong> $latex d^2=0$, that is the exterior derivative applied twice always gives zero. As soon as you manage to put two d's together (is there a dirty joke there somewhere...? Left as an exercise) it's zero.</li>
+</ul>
+<p>That looks like a lot, but it's again really really simple once you try doing it. For example, let's try it on the previous paragraph's form, in d=3:</p>
+<p>$latex d\left(  x^3 dx^1 \wedge dx^2 + (9(x^1)^4 + \sin(x^3)) dx^3 \wedge dx^1 \right)$</p>
+<p>$latex = 3 x^2 dx^3 \wedge dx^1 \wedge dx^2 + (36(x^1)^3 dx^1 + \cos(x^3) 3 (x^3)^2 dx^3 ) \wedge dx^3 \wedge dx^1 $</p>
+<p>Note when you have d of "function times basis differential" you don't even bother trying to write down both terms in the product rule; basis differentials are full of d's and $latex d^2=0$. You just differentiate the function in front (and re-add the wedge which was implicit). Also do note that the entire second term vanishes because you're wedging equal 1-forms. So the result is:</p>
+<p>$latex =  3 x^2 dx^1 \wedge dx^2 \wedge dx^3$</p>
+<p>and of course that's a function times the volume form, since the volume form is the only 3-form in d=3.</p>
+<p>&nbsp;</p>
+<h3>Integrals and Stokes' theorem</h3>
+<h2>Examples</h2>
+<h3>All of "vector calculus" (de Rham cohomology)</h3>
+<h3>Stream functions</h3>
+<h3>EM in any dimension</h3>
