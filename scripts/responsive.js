@@ -10,5 +10,6 @@ window.onload = function() {
     }
   }
 
-  sidebarButton.addEventListener("click", openSidebar, false);
+  if(sidebarButton)
+	  sidebarButton.addEventListener("click", openSidebar, false);
 };
