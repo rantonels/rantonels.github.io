@@ -239,6 +239,12 @@ a:hover {
   font-size: 1.1em;
 }
 
+.rss-link {
+	text-align: center;
+	display: block;
+	margin-bottom: 10px;
+}
+
 .post-link {
   margin-bottom: 0.75em;
 }

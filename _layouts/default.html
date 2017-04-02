@@ -31,8 +31,10 @@
           <h1 class="title"><a href="/"><img id="logo" src="/images/logo.png"></a></h1>
 	  <span class="tagline">{{ site.description  }}</span>
         </div>
+	
         <div class="posts">
-          <ul class="posts-list">
+        	<span class="rss-link"><a href="/feed.xml">(RSS feed)</a> </span>
+		<ul class="posts-list">
             {% for post in site.posts %}
               <li class="post-link">
                 <a class="post-title" href="{{ post.url }}">
