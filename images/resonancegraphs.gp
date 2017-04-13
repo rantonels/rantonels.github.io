@@ -1,7 +1,7 @@
 set terminal png size 800,300 enhanced
 set output 'resonanceplot.png'
 
-f(x) = 1./(x*x)
+f(x) = 0.1/(x*x)
 g(x) = 3./(x*x + 3.)
 
 set multiplot layout 1,2 rowsfirst
