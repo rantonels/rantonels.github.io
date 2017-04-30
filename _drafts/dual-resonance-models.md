@@ -91,11 +91,48 @@ This very much looks like excitations of a quantum bound system, because it is. 
 
 (plot)
 
-The trajectories are linear! Actually *affine*, not linear, but experimentalists say linear if they see a line - they're a practical breed.
+The trajectories are linear! Actually *affine*, not linear, but experimentalists say linear if they see a line - they're a practical breed. These angular momentum - squared mass lines are called *Regge trajectories*. The fascinating thing is that the slope \\(\alpha'\\), aptly named Regge slope, is a universal constant for all mesons and baryons. Not only: there is always a primary, or mother trajectory with y-intercept \\(\alpha_0\\):
+
+$$ J = \alpha_0 + \alpha' M^2 $$,
+
+where \\(\alpha_0\\) is yet another universal constant, and the mother is accompained by a tower of "daughter" trajectories shifted by an integer:
+
+$$ J = \alpha_0 + \alpha' M^2 - n$$
 
 
+$$  n = 1,2,3,\ldots $$
 
-- Regge trajectories
+The daughters are interesting, but let's concentrate on the mother which is already something magical. The equation \\( J = \alpha_0 + \alpha' M^2 \\) should be read as specifying the angular momentum as an analytic function \\(\alpha(M^2)\\) of the mass squared. Particles appear whenever J hits a non-negative integer, and the mass-squared at which you hit the integer is the mass-squared of the particle. Makes sense. 
+
+What is unusual is that this function is a line. For example, if you take the case of a bound state of two particles interacting with a \\(1/r\\) potential, so essentially the hydrogen atom, you will find a tower of excited states, but the Regge trajectory will be something like \\( J = \alpha(M^2) = - 1 + \text{constant} (M - M_0)^{-1/2} \\). Yuck. In fact, no bound system known at the time could result in a linear Regge trajectory.
+
+Why the hell are mesons arranged on these trajectories? Why are they universal? It barely makes sense. ...
+
+## the Gamma amplitude
+
+Physics is a palace.
+
+QFTists believed the palace had to be built. So they began making plans for foundations that would have allowed the construction of an edifice that would reach up to where they wanted to go, which is to match with experiments.
+
+The S-matricists believed the palace was already there, but needed to be explored. So they tried to break in from the last floor's window hoping to be able to make their way down from there. The window were linear Regge trajectories, and people hoped combining these with the understanding of particles as resonances would prove fruitful in investigating the microscopic structure of... whatever the strong sector was.
+
+Take one mother Regge trajectory. Consider just bosons, so mesons. These are an infinite set of particles with spin \\( J = 0,1,2,3,...\\) and increasing mass \\( M_J^2 = (J-\alpha_0)/\alpha' \\), and also we ignore their decay. Smashing two particles together, the response should display a resonance for *each* of these values of \\(s = M_J^2\\). Thus the quantum amplitude for the process should have, as a function of \\(s\\) an infinite array of poles, at the values \\(s = M_J^2\\), right?
+
+What famous meromorphic function has such an array of poles? Right off the bat you'd say something like \\( 1/\sin(\pi z) \\), but that doesn't work: it has poles at all integer values of \\(z\\), we just want non-negative. The solution is spoilt in the title and is of course the [Gamma function](https://en.wikipedia.org/wiki/Gamma_function). Gamma realizes an analytic generalization (with a few special properties) of the integer factorial:
+
+$$ \Gamma(n) = (n-1)! $$
+
+and extends the factorial's recursive relation to complex arguments:
+
+$$ \Gamma(z+1) = z \Gamma(z)$$
+
+Playing around with these two facts it is very easy to see Gamma is divergent only at the non-positive integers \\(z = 0, -1, -2, -3, \ldots\\). In fact, these are actually simple poles for the Gamma function, and the only poles (there is no sneaky magic going on off-real axis). So... what if we tried
+
+$$ A(s) \sim \Gamma(-\alpha(s)) $$
+
+That seems to do the trick: it has a pole whenever \\(\alpha(s)\\) strikes a non-negative integer, which means \\(s\\) struck the corresponding \\(M_J^2\\), which is the resonance of the spin-J particle of the Regge tower.
+
+
 - Gamma amplitude
 - Beta function
 - duality
