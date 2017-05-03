@@ -122,7 +122,8 @@ a:hover {
 #date {
   font-size: 16px;
   padding-top: 0.25em;
-  margin-bottom: 2em;
+  margin-bottom: 20px;
+  margin-top: 10px;
   text-transform: uppercase;
   font-weight: 600;
   color: #787878;
@@ -146,6 +147,9 @@ a:hover {
 }
 
 .post {
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 17px;
+
   line-height: 24px;
   max-width: 725px;
   clear: both;
@@ -174,8 +178,7 @@ a:hover {
 }
 
 .post p {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-  font-size: 17px;
+  margin-top: 10px;
   margin-bottom: 1.45em;
   text-align: justify;
 }
