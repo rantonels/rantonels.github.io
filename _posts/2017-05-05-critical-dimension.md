@@ -4,8 +4,7 @@ title: "A simple and rigorous proof of 26/10 dimensions in string theory"
 cover: etaplotbw.png
 ---
 
-...does not exist. \\( \renewcommand{\Re}{\operatorname{Re}}
-\renewcommand{\Im}{\operatorname{Im}}\\)
+...does not exist.
 
 At least, I couldn't manage. The requirement of a specific and large number of spacetime dimensions (26 for the simpler bosonic string theory, 10 for the more sophisticated superstrings) is one of the most misunderstood aspects of the theory and definitely the essential ingredient for the majority of negative gut feelings towards it. It seems like there should be more effort from string peeps to explain in the simplest way possible the origin of these bizarre numbers to non-experts.
 
@@ -56,7 +55,8 @@ All I could manage is the following **realization of proof 3.2**. This will brin
 
 # The proof
 
-We have already talked about the worldsheet, the surface the string traces in spacetime. On this surface, we can set up a coordinate system \\((\sigma^1,\sigma^2)\\). Clearly, it is sensible physically that while observables might be written in terms of these coordinates, they should be invariant under coordinate changes \\((\sigma^1,\sigma^2) \rightarrow (\sigma^{1}\prime,\sigma^2 \prime)\\). After all, the coordinates are arbitrary to begin with. A simple example of (local) coordinate change is a dilation/rescaling:
+We have already talked about the worldsheet, the surface the string traces in spacetime. On this surface, we can set up a coordinate system \\((\sigma^1,\sigma^2)\\). Clearly, it is sensible physically that while observables might be written in terms of these coordinates, they should be invariant under coordinate changes \\((\sigma^1,\sigma^2) \rightarrow (\sigma^{1}\prime,\sigma^2 \prime)\\). After all, the coordinates are arbitrary to begin with. A simple example of (local) coordinate change is a dilation/rescaling: \\( \renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}\\)
 
 $$ (\sigma^1, \sigma^2) \rightarrow (\lambda \sigma^1, \lambda\sigma^2) $$
 
