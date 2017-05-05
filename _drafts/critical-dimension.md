@@ -1,13 +1,15 @@
 ---
 layout: post
 title: "A simple and rigorous proof of 26/10 dimensions in string theory"
+cover: etaplotbw.png
 ---
 
-...does not exist.
+...does not exist. \\( \renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}\\)
 
 At least, I couldn't manage. The requirement of a specific and large number of spacetime dimensions (26 for the simpler bosonic string theory, 10 for the more sophisticated superstrings) is one of the most misunderstood aspects of the theory and definitely the essential ingredient for the majority of negative gut feelings towards it. It seems like there should be more effort from string peeps to explain in the simplest way possible the origin of these bizarre numbers to non-experts.
 
-To be more specific, the real magical number is not the dimension \\(D\\) itself of spacetime, but \\(D-2\\), the number of dimensions *transverse* to the string, the ones it can oscillate *into* (minus one for the time dimension, and minus one for the dimension longitudinal to the string). In other words, the 1D string traces a 2D surface in spacetime, called a *worldsheet*. The magic number is the number of *remaining* directions available to the string, so \\(D-2\\).
+To be more specific, the real magical number is not the dimension \\(D\\) itself of spacetime, but \\(D-2\\), the number of dimensions **transverse** to the string, the ones it can oscillate *into* (minus one for the time dimension, and minus one for the dimension longitudinal to the string). In other words, the 1D string traces a 2D surface in spacetime, called a *worldsheet*. The magic number is the number of *remaining* directions available to the string, so \\(D-2\\).
 
 
 {% include image.html name="woleshet.png" caption="This picture has been badly drawn at least one thousand times, but I felt like badly drawing it yet one more time. " %}
@@ -47,22 +49,22 @@ The crazy-free proofs curiously form an unholy trinity. Each only requires knowl
 
 for a certain (surely biased) interpretation of these terms. Proof 1.2 is the most common in introductory string theory, since you're already learning the necessary string physics anyway, and it's mathematically not intimidating. Proof 2.1 is for a more advanced study and gives a very clear physical interpretation of the critical number of dimensions as it is directly related to the cancellation of a conformal anomaly. Proof 3.2 I've never seen before - it seems ideal for people that know some basic complex analysis (residue theorem is all we need) and some really basic quantum mechanics, and requires next-to-no knowledge about string physics.
 
-I've tried really hard to squeeze an **easy** proof that is "rigorous" (doesn't use the crazy equation), but I have failed. I have come to believe the three vertices of the triangle are to be understood as translation in different languages of the same conceptual core, and that core is irreducible. So if two of the links in the chain are brought to a minimum complexity, the third has to eat up all that complexity.
+I've tried really hard to squeeze an **easy** proof that is "rigorous" (doesn't use the crazy equation), but I have failed. I have come to believe the three vertices of the triangle are to be understood as translation in different languages of the same conceptual core, and that core is irreducible. So if two of the links in the chain are brought to a minimum complexity, the third has to eat it all up.
 
-All I could manage is the following realization of proof 3.2. This will bring the theoretical and string physics to the background and will concentrate on the mathematics, and will be as rigorous as possible on the mathematical side (while occasionally being slightly handwavy on the physics). It turns out quite longer than what you would call elementary, but I find it satisfying that it builds the number 24 piece by piece (as 2, times 3, times 4). If you care, here it is.
+All I could manage is the following **realization of proof 3.2**. This will bring the theoretical and string physics to the background and will concentrate on the mathematics, and will be as rigorous as possible on the mathematical side (while occasionally being slightly handwavy on the physics). It turns out quite longer than what you would call elementary, but I find it satisfying that it builds the number 24 piece by piece (as 2, times 3, times 4). If you care, here it is.
 
 
 # The proof
 
-We have already talked about the worldsheet, the surface the string traces in spacetime. On this surface, we can set up a coordinate system \\((\sigma^1,\sigma^2)\\). Clearly, it is sensible physically that while observables might be written in terms of these coordinates, they should be invariant under coordinate changes \\((\sigma^1,\sigma^2) \rightarrow (\sigma^{1}\prime,\sigma^2 \prime)\\). After all, the coordinates are arbitrary to begin with. A simple example of coordinate change is a dilation/rescaling:
+We have already talked about the worldsheet, the surface the string traces in spacetime. On this surface, we can set up a coordinate system \\((\sigma^1,\sigma^2)\\). Clearly, it is sensible physically that while observables might be written in terms of these coordinates, they should be invariant under coordinate changes \\((\sigma^1,\sigma^2) \rightarrow (\sigma^{1}\prime,\sigma^2 \prime)\\). After all, the coordinates are arbitrary to begin with. A simple example of (local) coordinate change is a dilation/rescaling:
 
 $$ (\sigma^1, \sigma^2) \rightarrow (\lambda \sigma^1, \lambda\sigma^2) $$
 
-so we understand that our theory's observables must be invariant under such rescalings. This is easy to do classically, but becomes highly non-trivial when the thing becomes quantum-mechanical.
+so we understand that our theory's observables must be **invariant under such rescalings**. This is easy to do classically, but becomes highly non-trivial when the thing becomes quantum-mechanical. This scale symmetry is part of the so-called worldsheet *conformal* symmetry of string theory.
 
-Imagine a situation in which a string loops in time to trace a torus in spacetime. Surely, a lot of possible tori shapes are all equally valid choices. We want to compute the probability for this process to happen with a specific torus shape, or better the *quantum amplitude*, whose squared modulus is the probability. A basic point of quantum mechanics is that we can calculate the amplitude by summing \\(\exp(-i E_i t) \\) over all possible states \\(i\\) each with energy \\(E_i\\), through the time passed \\(t\\). Thus
+Imagine a situation in which a string loops in time to trace a torus in spacetime. Surely, a lot of possible tori shapes are all equally valid choices. We want to compute the probability for this process to happen with a specific torus shape, or better the *quantum amplitude*, whose squared modulus is the probability. A basic point of quantum mechanics is that we can calculate the amplitude by summing \\(\exp(i E_i t) \\) over all possible states \\(i\\) each with energy \\(E_i\\), through the time passed \\(t\\). Thus
 
-$$ Z = \sum_i e^{-i E_i t} $$
+$$ Z = \sum_i e^{i E_i t} $$
 
 is the total amplitude. \\(Z\\) should respect our desired symmetries.
 
@@ -78,7 +80,7 @@ $$ E_n = \omega \left( \frac{1}{2} + n \right) $$
 
 Right? So the \\(Z\\) of one oscillator is
 
-$$Z_{QHO} = \sum_{n=0}^\infty e^{-i E_n t} = e^{-\frac{i}{2}\omega t} \sum_{n=0}^\infty e^{-i n \omega t} = \frac{e^{-\frac{i}{2} \omega t}}{1 - e^{-i\omega t}}$$
+$$Z_{QHO} = \sum_{n=0}^\infty e^{i E_n t} = e^{\frac{i}{2}\omega t} \sum_{n=0}^\infty e^{i n \omega t} = \frac{e^{\frac{i}{2} \omega t}}{1 - e^{i\omega t}}$$
 
 If you're *that* kind of person, you'll have immediately noticed I just summed a geometric series with ratio \\(\|r\| = 1\\), which actually doesn't converge. Let's rip off the bandaid right now: the \\(Z\\)s *almost never* converge in a Lorentzian (i.e. spacetime) theory. We physicists say they are "oscillatory" because we sum a bunch of \\(exp(ix)\\) factors, and then handwave that they somehow magically cancel, but this is a **cheap lie** - we just mean they don't converge. This is true not just in string theory but in all of quantum field theory, or standard quantum mechanics, or even the lowly quantum harmonic oscillator.
 
@@ -88,13 +90,13 @@ tl;dr: don't worry, assume \\(t\\) is complex and in the upper half-plane \\(\Im
 
 To get back on track, we had that one string in one dimension had infinite oscillation modes, which clearly have frequencies which are integer multiples of the fundamental. In fact, \\(\omega = 1,2,3,\ldots\\) and so the \\(Z\\) for our 1D string is the product
 
-$$ Z_{1,L} = \prod_{k=1}^\infty \frac{e^{-\frac{i}{2}k t}}{1- e^{-ikt}} = e^{-\frac{i}{2} (1+2+3+\ldots)t } \left(\prod_k 1- e^{-ikt}\right)^{-1} $$
+$$ Z_{1,L} = \prod_{k=1}^\infty \frac{e^{\frac{i}{2}k t}}{1- e^{ikt}} = e^{\frac{i}{2} (1+2+3+\ldots)t } \left(\prod_k 1- e^{ikt}\right)^{-1} $$
 
-...and we fell off the deep end. The madness of \\(1+2+3+\ldots\\) catched up with us. If we were weak in spirit, we would succumb and substitute \\(1+2+3+\ldots \rightarrow - 1/12\\), we would get the correct answer, skipping almost all of the math in this article. But we are not here for this, we are here to make that \\(24\\) come out without using witchcraft. Therefore, let's proceed.
+...and we fell off the deep end. The madness of \\(1+2+3+\ldots\\) catched up with us. If we were weak in spirit, we would succumb and substitute \\(1+2+3+\ldots \rightarrow - 1/12\\), and we would get the correct answer, skipping almost all of the math in this article. But we are not here for this, we are here to make that \\(24\\) come out **without** using witchcraft. Therefore, let's proceed.
 
-Why did that divergent sum appear in that exponent in the first place? If you trace our calculations back it comes from the zero-point energies of the QHOs, the \\(E_0 = \frac{\omega}{2}\\). However, zero-point energies are arbitrary, and that is just a useful conventional choice. Ultimately there is an ambiguity in building a quantum HO from a classical HO called an *ordering* ambiguity, since you need to convert commuting variables \\(p,q\\) into non-commuting operators \\(\hat p, \hat q\\) and there is no preferential "quantization" of things like \\(pq\\). Is the quantization \\(\hat p \hat q\\)? Or is it \\(\hat q \hat p\\)? The difference is a constant, an arbitrariness in the zero-point energy. Thus our most conservative bet is that the ZPOs here actually sum to a finite, but unknown value:
+Why did that divergent sum appear in that exponent in the first place? If you trace our calculations back it comes from the zero-point energies of the QHOs, the \\(E_0 = \frac{\omega}{2}\\). However, zero-point energies are **arbitrary**, and that is just a useful conventional choice. Ultimately there is an ambiguity in building a quantum HO from a classical HO called an *ordering* ambiguity, since you need to convert commuting variables \\(p,q\\) into non-commuting operators \\(\hat p, \hat q\\) and there is no preferential "quantization" of things like \\(pq\\). Is the quantization \\(\hat p \hat q\\)? Or is it \\(\hat q \hat p\\)? The difference is a constant, an arbitrariness in the zero-point energy. Thus our most conservative bet is that the ZPOs here actually sum to a finite, but unknown value:
 
-$$ Z_{1,L}^{-1} = e^{irt} \; \prod_k 1 - e^{-ikt} $$
+$$ Z_{1,L}^{-1} = e^{-irt} \; \prod_k 1 - e^{ikt} $$
 
 where \\(r\\) is an unknown real number. Note that the mad calculation would give the magic value \\(r = 1/24\\). So, for my next two tricks:
 
@@ -113,7 +115,7 @@ where \\(t\\) is represented as a point in the complex plane. (The \\(2\pi\\) si
 
 Note that when \\(\tau\\) moves to the real axis the torus degenerates. That makes physical sense: can a string really loop back unto itself in real time? That'd be time travel. It can only happen in imaginary time or at least in the upper half-plane.
 
-Defining \\(q = e^{i 2\pi \tau}\\), our \\(Z_{1,L}\\) becomes
+Defining \\(q := e^{i 2\pi \tau}\\), our \\(Z_{1,L}\\) becomes
 
 $$ Z_{1,L}^{-1}(\tau) = q^r \; \prod_k (1-q^k) $$
 
@@ -130,7 +132,7 @@ However, under this transformation our amplitude does transform:
 
 $$ Z_{1,L}^{-1} \rightarrow e^{2\pi i r} \, Z_{1,L}^{-1}$$ 
 
-That makes no sense... until we remember that this is only for **one** dimensions. For \\(D-2\\) transverse dimensions, the total amplitude is \\(Z_{1,L}^{D-2} \\), which will remain invariant if
+That makes no sense... until we remember that this is only for **one** dimension. For \\(D-2\\) transverse dimensions, the total amplitude is \\(Z_{1,L}^{D-2} \\), which will remain invariant if
 
 $$ r(D-2) = 1$$
 
@@ -142,7 +144,7 @@ Now, proving that \\(r = 1/24\\) will not be as easy. Let's try.
 
 The other symmetry we will consider is to send \\(\tau \rightarrow - 1/\tau\\). The resulting tori are not identical but they are similar - they are rescaled versions of eachother. You can check that the original \\(1\\) side matches with the new \\(-1/\tau\\) side and the original \\(\tau\\) side matches with the new \\(1\\) side. As we said, rescalings of the worldsheet should be a symmetry.
 
-Thus the total amplitude must be invariant under this; however we should not expect \\(Z_{1,L}^{D-2}\\) to necessarily also be. Huh? Wasn't \\(Z_{1,L}^{D-2}\\) the total amplitude? No, I lied to protect you from the harsh truth. The truth (part of it) is that oscillation on a string always come in pairs. There are many possible characterizations of this dichotomy: left-movers and right-movers, holomorphic and antiholomorphic, sine and cosine...
+Thus the total amplitude must be invariant under this; however we should not expect \\(Z_{1,L}^{D-2}\\) to necessarily also be. Huh? Wasn't \\(Z_{1,L}^{D-2}\\) the total amplitude? No, I lied to protect you from the harsh truth. The truth (part of it) is that **oscillation on a string always come in pairs**. There are many possible characterizations of this dichotomy: left-movers and right-movers, holomorphic and antiholomorphic, sine and cosine...
 
 
 
@@ -150,7 +152,7 @@ What matters is that to our \\(Z_{1,L}\\) (the \\(L\\) is now understood to stan
 
 However, that is still not all: while we have accounted for oscillations of the string about a "reference" position, we also need to account for the *overall* movement of the centre of mass in space. We want the string to be back to its original point after time \\(\tau\\) if we want it to loop into a torus; but we cannot just *want* it, we need to include the probability amplitude for it to happen.
 
-What is the probability amplitude for a quantum particle in 1D to stay in the same place after a certain amount of time? A hint is that for purely imaginary times, the Schroedinger equation is the heat equation. And an infinitely concentrated speck of heat evolves under the heat equation in 1D by [spreading into a gaussian whose peak decreases as](https://en.wikipedia.org/wiki/Heat_kernel) \\((\operatorname{time})^{-1/2} \\). Thus, let me guess the amplitude for the centre of mass is something like this
+What is the probability amplitude for a quantum particle in 1D to stay in the same place after a certain amount of time? A hint is that for **purely imaginary times**, the Schroedinger equation is the [heat equation](https://en.wikipedia.org/wiki/Heat_equation). And an infinitely concentrated speck of heat evolves under the heat equation in 1D by [spreading into a gaussian whose peak decreases as](https://en.wikipedia.org/wiki/Heat_kernel) \\((\operatorname{time})^{-1/2} \\). Thus, let me guess the amplitude for the centre of mass is something like this
 
 $$ (\Im \tau)^{-1/2} $$
 
@@ -177,7 +179,7 @@ Let's do some preliminary rewriting.
 
 $$Z_{1,L}^{-1} (\tau) = q^r P(\tau)\,,\quad P(\tau) := \prod_{\ell=1}^\infty (1-q^\ell)$$
 
-Then, a more confortable rewriting of the product \\(P(\tau)\\):
+Then, a more comfortable presentation of the product \\(P(\tau)\\):
 
 $$ - \log P(\tau) = - \sum_{\ell=1}^\infty \log(1-q^\ell) = \sum_{l,k = 1}^\infty \frac{1}{k} q^{k\ell} = \sum_{k = 1} \frac{1}{k} \frac{q^k}{1-q^k} = \sum_{k=1} \frac{1}{k} \frac{1}{q^{-k} -1} $$
 
@@ -233,11 +235,11 @@ $$ - \frac{1}{3} (\tau + \tau^{-1}) + \sum_k \left( \frac{1}{\pi k} \cot(\frac{\
 
 Note 
 
-$$ \cot s  = \frac{ e^{is} + e^{-is} }{e^{is} - e^{-is} } = \frac{e^{2is} + 1}{e^{2is} - 1} = 1 + \frac{2}{1-e^{-2is}} $$
+$$ \cot s  = \frac{ e^{is} + e^{-is} }{e^{is} - e^{-is} } = \frac{1 + e^{-2is}}{1 - e^{-2is}} = -1 + \frac{2}{1-e^{-2is}} $$
 
 plug that in, and you'll recognize that the sum of the residues becomes
 
-$$ -\frac{1}{3} (\tau + \tau^{-1}) + \frac{2}\pi \sum_k \frac{1}{k}  \left( \frac{1}{1-e^{-\frac{2\pi i k}{\tau}} } + \frac{1}{ 1- e^{-2 \pi i k \tau} } \right) $$
+$$ -\frac{1}{3} (\tau + \tau^{-1}) + \frac{2}\pi \sum_k \frac{1}{k}  \left( \frac{1}{1-e^{-\frac{2\pi i k}{\tau}} } - \frac{1}{ 1- e^{-2 \pi i k \tau} } \right) $$
 
 $$ =-\frac{1}{3} (\tau + \tau^{-1}) + \frac{2}{\pi} \left(\log P(-1/\tau) - \log P(\tau) \right) $$
 
@@ -261,6 +263,18 @@ And that's it! That's what we were looking for. For \\(Z_{1,L}^{-1}(\tau)\\) to 
 
 $$ D = 26 $$
 
+# Conclusions
+
+Because of the philosophy behind this whole post, to only use mathematics as elementary as possible and to have it be self-contained, we sped by what is actually incredibly fascinating (and surely much more elegant) math. \\(\eta(\tau)\\) is, of course, the [Dedekind eta function](https://en.wikipedia.org/wiki/Dedekind_eta_function), and what we proved are its transformation properties under the modular group; more precisely that the modular discriminant \\(\Delta(\tau) := (2\pi)^{12} \eta^{24}\\) is a modular form of weight 12. String theory is tightly connected to this area of mathematics; in fact I hope that for those that already know this stuff this served as a sneak peek of what strings even have to do with modular forms. Anyways, I don't think I would do justice to a subject I actually barely know the basics of, so I'll shut up now.
+
+An interesting question that pops up sometimes: if it's so wrong, why does \\(1+2+3+\ldots = -1/12\\), or ζ-regularization / heat kernel / Abel summation or whatever you want to call it, give the same correct result as more rigorous paths, with one tenth of the effort? 
+
+I have **no** idea. 
+
+Instinctively I would babble something about "physically reasonable" or "analyticity" but frankly this is just pure madness. It's definitely not a coincidence because the same trick works for superstrings too. In fact I'm not even sure what the exact relationship between the three different classes of proofs are, they look like completely different reasonings. In light-cone quantization, on a first reading you don't even realize how the scale/conformal invariance even fits in - it's very hidden. And if you happen to know some conformal field theory, go take a look at how that proof builds the 24. They don't sound like translations of the same thing, even though they *have* to be.
+
+It's fascinating how much information about the content of the theory the proofs of \\(D = 26\\) (or \\(D=10\\)) carry, and how much you already learn about strings just by trying to explain what is essentially the **most basic** fact about the theory. It is a limpid example of the fact that in string theory *everything fits*, nothing is just thrown there, everything is essential.
+
 # Addendum
 
 There is perhaps a faster proof if you assume Euler's pentagonal number theorem
@@ -278,3 +292,14 @@ $$\eta(\tau) = q^{1/24} P(\tau) = \sum_{k=-\infty}^{\infty} (-1)^k q^{\frac{3}{2
 With \\(\eta\\) in this form, it is *doable* to prove \\(\eta(-1/\tau) = \sqrt{\tau/i} \eta(\tau) \\) using Poisson resummation.
 
 Still, invoking Euler's theorem seems definitely like cheating, so I didn't pursue this path.
+
+
+
+
+# Refs
+
+Baez, J. (2008). [My favourite number: 24](http://math.ucr.edu/home/baez/numbers/24.pdf). Talk at the University of Glasgow.
+
+Siegel, C. (1954). A simple proof of η(-1/τ)=η(τ)√τ/i. Mathematika, 1(1), 4-4. doi:10.1112/S0025579300000462
+
+

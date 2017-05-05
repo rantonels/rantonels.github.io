@@ -209,6 +209,11 @@ a:hover {
   background-color: #333;
 }
 
+.post figcaption {
+	padding: 10px;
+	font-size: 15px;
+}
+
 /*****************************************************************************/
 /*
 /* Sidebar and Content
