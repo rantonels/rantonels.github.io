@@ -119,6 +119,10 @@ a:hover {
 /*
 /*****************************************************************************/
 
+#post-info {
+	margin-bottom: 30px;
+}
+
 #date {
   font-size: 16px;
   padding-top: 0.25em;
@@ -212,6 +216,15 @@ a:hover {
 .post figcaption {
 	padding: 10px;
 	font-size: 15px;
+}
+
+.post h1 {
+	margin-bottom: 40px;
+	margin-top: 50px;
+}
+
+.post h2 {
+	margin-top:20px;
 }
 
 /*****************************************************************************/

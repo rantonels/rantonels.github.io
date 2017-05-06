@@ -17,7 +17,7 @@ Thus the magic number is 24 (or 8 for the superstring). 24 is truly a mystical n
 
 $$ 1^2 + 2^2 + 3^2 + \ldots + 23^2 + 24^2 = 70^2 $$
 
-and this only works for \\(24\\), except 0 and 1 of course. (If you like **tough** math puzzles, try proving this. I don't). It is nothing else than incredible that this funny identity is related to unexpectedly complex and fascinating mathematics (monstrous moonshine), *and* string theory (which acts as the "glue" that brings together monstrous moonshine). Also relevant is the appearance of 24/2 in the crazy series
+and [this only works](https://archive.lib.msu.edu/crcmath/math/math/c/c023.htm) for \\(24\\), except 0 and 1 of course. (If you like **tough** math puzzles, try proving this. I don't). It is nothing else than incredible that this funny identity is related to unexpectedly complex and fascinating mathematics (monstrous moonshine), *and* string theory (which acts as the "glue" that brings together monstrous moonshine). Also relevant is the appearance of 24/2 in the crazy series
 
 $$ 1 + 2 + 3 + 4 + \ldots "=" -\frac{1}{12} $$
 
@@ -27,7 +27,9 @@ $$ 1 - 2 + 3 - 4 + \ldots "=" \frac{1}{4} $$
 
 which gives \\(D-2 = 8\\). You should at this point be convinced that I've lost it completely. After all, these sound like random unrelated facts (and "facts") and even though each one of them could be easily explained to a layman, I'm not really explaining what the relationship should be with the number of dimensions in string theory. I sound mad not because I say things that are wrong, but because these things are incoherent and disconnected. The problem is that the connective tissue is too technical, either mathematically, or physically, or stringly, for me to explain simply.
 
-How to *convince* someone that \\(D-2 = 24\\) with the least effort possible? It's much easier if they accept the crazy equation \\(1+2+3+\ldots = -1/12\\); but that's clearly not satisfyingly rigorous, so how brief can we be if we *avoid* using the crazy equation? I've found that proofs of \\(D=26\\) can be classified roughly as such:
+How to *convince* someone that \\(D-2 = 24\\) with the least effort possible? It's much easier if they accept the crazy equation \\(1+2+3+\ldots = -1/12\\); but that's clearly not satisfyingly rigorous. Even if it is possible to make sense of it, for example, with ζ-regularization, aka with heat-kernel regularization + analytic renormalization (and there is already a lot of material on this around) this would *still* be unsatisfactory, since there is no non-shady reason for which all of this manipulation should have anything to do with the physics. Is it possible to arrive to the correct results *without* this crazy equation; actually, without ever encountering any "irregularity" to regularize? Yes, sure. But exactly how **brief** and elementary can we be doing that? 
+
+I've found that proofs of \\(D=26\\) can be classified roughly as such:
 
 1. **Light-cone quantization**
 	1. with crazy eqt. Requires a bit of knowledge about the polarizations of massive/massless vector bosons.
@@ -38,7 +40,7 @@ How to *convince* someone that \\(D-2 = 24\\) with the least effort possible? It
 	1. with crazy eqt. Requires fairly elementary QM and math.
 	2. without crazy eqt. Requires elementary QM but an f-ton of basic, but tedious complex analysis.
 
-Proof 1.1, I've done it [here](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/) a while ago. It's pretty easy, but you need to trust the crazy equation. The other proof with the crazy equation, 1.1, is in [Baez's slides](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/).
+Proof 1.1, I've done it [here](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/) a while ago. It's pretty easy, but you need to trust the crazy equation. The other proof with the crazy equation, 3.1, is in [Baez's slides](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/).
 
 The crazy-free proofs curiously form an unholy trinity. Each only requires knowledge from one vertex of a triangle spanning between
 
@@ -50,7 +52,8 @@ for a certain (surely biased) interpretation of these terms. Proof 1.2 is the mo
 
 I've tried really hard to squeeze an **easy** proof that is "rigorous" (doesn't use the crazy equation), but I have failed. I have come to believe the three vertices of the triangle are to be understood as translation in different languages of the same conceptual core, and that core is irreducible. So if two of the links in the chain are brought to a minimum complexity, the third has to eat it all up.
 
-All I could manage is the following **realization of proof 3.2**. This will bring the theoretical and string physics to the background and will concentrate on the mathematics, and will be as rigorous as possible on the mathematical side (while occasionally being slightly handwavy on the physics). It turns out quite longer than what you would call elementary, but I find it satisfying that it builds the number 24 piece by piece (as 2, times 3, times 4). If you care, here it is.
+All I could manage is the following **realization of proof 3.2**. This will bring the theoretical and string physics to the background and will concentrate on the mathematics, and will be as rigorous as possible on the mathematical side (while occasionally being slightly handwavy on the physics). It turns out quite longer than what you would call elementary, but I find it satisfying that it builds the number 24 piece by piece (as 2, times 3, times 4). Consider it a **letter of apology** for releasing \\(1+2+3+\ldots=-1/12\\) into the wild; if you care, here it is.
+
 
 
 # The proof
@@ -74,17 +77,17 @@ An important point is that a composite system AB of two non-interacting subsyste
 
 {% include image.html name="stringharmonics.jpg" caption="Just like actual vibrating strings, string theory strings have harmonics which are integer multiples of the fundamental." %}
 
-So a string is almost exactly like an actual guitar strings and has infinite oscillation modes, or harmonics, or overtones. *Each* one of them is a harmonic oscillator, which in the quantum version has energy levels
+So a string is almost exactly like an actual guitar strings and has infinite oscillation modes, or harmonics, or overtones. **Each one** of them is a harmonic oscillator, which in the quantum version has energy levels
 
 $$ E_n = \omega \left( \frac{1}{2} + n \right) $$
 
-Right? So the \\(Z\\) of one oscillator is
+Right? So the \\(Z\\) of one quantum harmonic oscillator is
 
 $$Z_{QHO} = \sum_{n=0}^\infty e^{i E_n t} = e^{\frac{i}{2}\omega t} \sum_{n=0}^\infty e^{i n \omega t} = \frac{e^{\frac{i}{2} \omega t}}{1 - e^{i\omega t}}$$
 
-If you're *that* kind of person, you'll have immediately noticed I just summed a geometric series with ratio \\(\|r\| = 1\\), which actually doesn't converge. Let's rip off the bandaid right now: the \\(Z\\)s *almost never* converge in a Lorentzian (i.e. spacetime) theory. We physicists say they are "oscillatory" because we sum a bunch of \\(exp(ix)\\) factors, and then handwave that they somehow magically cancel, but this is a **cheap lie** - we just mean they don't converge. This is true not just in string theory but in all of quantum field theory, or standard quantum mechanics, or even the lowly quantum harmonic oscillator.
+The geometric series I just summed appears to have ratio \\(\|r\| = 1\\), which means it actually does not converge. Let's rip off the bandaid right now: the \\(Z\\)s, defined naively as we did, *almost never* converge in a Lorentzian (i.e. spacetime) theory. Often we physicists say they are "oscillatory" because we sum a bunch of \\(exp(ix)\\) factors, and then handwave that they somehow magically cancel, but this is a **cheap lie** - we just mean they don't converge. This is true not just in string theory but in all of quantum field theory, or standard quantum mechanics, or even the lowly quantum harmonic oscillator.
 
-How can we move forward? The solution we have come up with is to make time a complex variable. By giving it an imaginary part, these \\(Z\\)s are made to converge. Not only: when you compute observable quantities from this, and then take \\(t\\) back to the real axis, you recover sensible answers (which match experiment when possible). So, this is not a trick; this prescription is our *definition* of what it means to have a quantum theory in spacetime.
+How can we move forward? The correct way to do it (and to word it) with is to make time a complex variable. By giving it an imaginary part, these \\(Z\\)s are made to converge. Not only: when you compute directly observable quantities from this, and then take \\(t\\) back to the real axis, you recover sensible answers (which match experiment when possible). So, this is not a trick; this prescription is our **definition** of what it means to have a quantum theory in spacetime.
 
 tl;dr: don't worry, assume \\(t\\) is complex and in the upper half-plane \\(\Im t > 0 \\).
 
@@ -94,7 +97,7 @@ $$ Z_{1,L} = \prod_{k=1}^\infty \frac{e^{\frac{i}{2}k t}}{1- e^{ikt}} = e^{\frac
 
 ...and we fell off the deep end. The madness of \\(1+2+3+\ldots\\) catched up with us. If we were weak in spirit, we would succumb and substitute \\(1+2+3+\ldots \rightarrow - 1/12\\), and we would get the correct answer, skipping almost all of the math in this article. But we are not here for this, we are here to make that \\(24\\) come out **without** using witchcraft. Therefore, let's proceed.
 
-Why did that divergent sum appear in that exponent in the first place? If you trace our calculations back it comes from the zero-point energies of the QHOs, the \\(E_0 = \frac{\omega}{2}\\). However, zero-point energies are **arbitrary**, and that is just a useful conventional choice. Ultimately there is an ambiguity in building a quantum HO from a classical HO called an *ordering* ambiguity, since you need to convert commuting variables \\(p,q\\) into non-commuting operators \\(\hat p, \hat q\\) and there is no preferential "quantization" of things like \\(pq\\). Is the quantization \\(\hat p \hat q\\)? Or is it \\(\hat q \hat p\\)? The difference is a constant, an arbitrariness in the zero-point energy. Thus our most conservative bet is that the ZPOs here actually sum to a finite, but unknown value:
+Why did that divergent sum appear in that exponent in the first place? If you trace our calculations back it comes from the zero-point energies of the QHOs, the \\(E_0 = \frac{\omega}{2}\\). However, zero-point energies are **arbitrary**, and that one was just a useful conventional choice. Ultimately there is an ambiguity in building a quantum HO from a classical HO called an *ordering* ambiguity, since you need to convert commuting variables \\(p,q\\) into non-commuting operators \\(\hat p, \hat q\\) and there is no preferential "quantization" of things like \\(pq\\). Is the quantization \\(\hat p \hat q\\)? Or is it \\(\hat q \hat p\\)? The difference is a constant, an arbitrariness in the zero-point energy. Thus our most conservative bet is that the ZPOs here actually sum to a finite, but unknown value:
 
 $$ Z_{1,L}^{-1} = e^{-irt} \; \prod_k 1 - e^{ikt} $$
 
@@ -231,7 +234,7 @@ $$ 4 \log \left(\frac{\tau}{i} \right) $$
 
 Nice. Now for the residues. If \\(\nu \rightarrow \infty\\), all the poles shrink and move closer to the origin; so in the limit they are all inside the rhombus and the sum is over all poles. Thus the sum is
 
-$$ - \frac{1}{3} (\tau + \tau^{-1}) + \sum_k \left( \frac{1}{\pi k} \cot(\frac{\pi k}{\tau}) + \frac{1}{\pi k} \cot(\pi k \tau) \right) $$
+$$ - \frac{1}{3} (\tau + \tau^{-1}) + 2 \sum_{k=1}^\infty \left( \frac{1}{\pi k} \cot(\frac{\pi k}{\tau}) + \frac{1}{\pi k} \cot(\pi k \tau) \right) $$
 
 Note 
 
@@ -239,7 +242,7 @@ $$ \cot s  = \frac{ e^{is} + e^{-is} }{e^{is} - e^{-is} } = \frac{1 + e^{-2is}}{
 
 plug that in, and you'll recognize that the sum of the residues becomes
 
-$$ -\frac{1}{3} (\tau + \tau^{-1}) + \frac{2}\pi \sum_k \frac{1}{k}  \left( \frac{1}{1-e^{-\frac{2\pi i k}{\tau}} } - \frac{1}{ 1- e^{-2 \pi i k \tau} } \right) $$
+$$ -\frac{1}{3} (\tau + \tau^{-1}) + \frac{4}\pi \sum_{k=1}^\infty \frac{1}{k}  \left( \frac{1}{1-e^{-\frac{2\pi i k}{\tau}} } - \frac{1}{ 1- e^{-2 \pi i k \tau} } \right) $$
 
 $$ =-\frac{1}{3} (\tau + \tau^{-1}) + \frac{2}{\pi} \left(\log P(-1/\tau) - \log P(\tau) \right) $$
 
@@ -253,7 +256,7 @@ $$ e^{\frac{2\pi i / \tau}{24}} P(-1/\tau)  =  \sqrt{\tau/i} \; e^{\frac{2 \pi i
 
 This seems not much of a fact about \\(P(\tau)\\), but about the combination
 
-$$ \eta(\tau) := e^{\frac{2\pi i \tau}{24}} P(\tau) = q^{\frac{1}{24}} \prod_k (1-q^k) $$
+$$ \eta(\tau) := e^{\frac{2\pi i \tau}{24}} P(\tau) = q^{\frac{1}{24}} \prod_{k=1}^\infty (1-q^k) $$
 
 which we just proved transforms "nicely" under a \\(\tau \rightarrow - 1/\tau\\) transformation:
 
@@ -271,7 +274,7 @@ An interesting question that pops up sometimes: if it's so wrong, why does \\(1+
 
 I have **no** idea. 
 
-Instinctively I would babble something about "physically reasonable" or "analyticity" but frankly this is just pure madness. It's definitely not a coincidence because the same trick works for superstrings too. In fact I'm not even sure what the exact relationship between the three different classes of proofs are, they look like completely different reasonings. In light-cone quantization, on a first reading you don't even realize how the scale/conformal invariance even fits in - it's very hidden. And if you happen to know some conformal field theory, go take a look at how that proof builds the 24. They don't sound like translations of the same thing, even though they *have* to be.
+Instinctively I would babble something about "physically reasonable" or "analyticity" but frankly this is just pure madness. It's definitely not a coincidence because the same trick works for superstrings too. In fact I'm not even sure what the exact relationship between the three different classes of proofs are, they look like completely different reasonings. In light-cone quantization, on a first reading you don't even realize how the scale/conformal invariance even fits in - it's very hidden. And if you happen to know some conformal field theory, go take a look at how that proof builds the 24. They don't sound *exactly* like translations of the same thing, even though they *have* to be.
 
 It's fascinating how much information about the content of the theory the proofs of \\(D = 26\\) (or \\(D=10\\)) carry, and how much you already learn about strings just by trying to explain what is essentially the **most basic** fact about the theory. It is a limpid example of the fact that in string theory *everything fits*, nothing is just thrown there, everything is essential.
 
