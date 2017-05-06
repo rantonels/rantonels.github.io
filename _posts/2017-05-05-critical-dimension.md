@@ -40,7 +40,7 @@ I've found that proofs of \\(D=26\\) can be classified roughly as such:
 	1. with crazy eqt. Requires fairly elementary QM and math.
 	2. without crazy eqt. Requires elementary QM but an f-ton of basic, but tedious complex analysis.
 
-Proof 1.1, I've done it [here](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/) a while ago. It's pretty easy, but you need to trust the crazy equation. The other proof with the crazy equation, 3.1, is in [Baez's slides](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/).
+Proof 1.1, I've done it [here](https://www.reddit.com/r/askscience/comments/3y6jxc/how_does_that_divergent_sum_which_equals_112/cyb1n94/) a while ago. It's pretty easy, but you need to trust the crazy equation. The other proof with the crazy equation, 3.1, is in [Baez's slides](http://math.ucr.edu/home/baez/numbers/24.pdf).
 
 The crazy-free proofs curiously form an unholy trinity. Each only requires knowledge from one vertex of a triangle spanning between
 
