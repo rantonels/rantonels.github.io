@@ -10,15 +10,15 @@
 }
 
 html, body {
-  height: 100%;
   width: 100%;
   -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
 }
 
 body {
   color: #4a4a4a;
   background-color: #fafbfc;
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Alegreya', serif;
   font-weight: 400;
   font-size: 0.85em;
   overflow: hidden;
@@ -76,7 +76,6 @@ a:hover {
 /*****************************************************************************/
 
 .site {
-  height: 100%;
   width: 100%;
   line-height: 1.25em;
 }
@@ -140,6 +139,7 @@ a:hover {
 
 #info-container {
   margin-top: 3em;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 #title {
@@ -151,7 +151,7 @@ a:hover {
 }
 
 .post {
-  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-family: 'Alegreya', serif;
   font-size: 17px;
 
   line-height: 24px;
