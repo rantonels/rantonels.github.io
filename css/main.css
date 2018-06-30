@@ -274,6 +274,7 @@ a:hover {
   font-weight: 600;
   font-size: 1.25em;
   text-transform: uppercase;
+  font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 .post-date {
